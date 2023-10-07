@@ -1,18 +1,22 @@
 import styled from "styled-components";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-export const StyledItem = styled.div`
+export const StyledItem = styled.li`
   position: relative;
+  max-height: 300px;
+  aspect-ratio: 1;
 `;
 
 export const StyleImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1;
+  border: 5px solid gray;
   border: ${(props) =>
     props.borderColor ? `5px solid ${props.borderColor}` : "none"};
   &:hover {
