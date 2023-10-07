@@ -10,13 +10,23 @@ export const Container = styled.div`
 export const StyledList = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, auto);
-  gap: 16px;
+  gap: 32px;
+  padding: 16px 0;
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, auto);
-    gap: 8px;
+    gap: 24px;
   }
   @media (max-width: 500px) {
     grid-template-columns: auto;
-    gap: 8px;
+    gap: 16px;
   }
+`;
+
+export const StyledDescription = styled.div`
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
 `;
