@@ -7,9 +7,10 @@ const initialState = {
 
 export const getUniversity = createAsyncThunk(
   "university/getUniversity",
-  async (_, { rejectWithValue, dispatch }) => {
+  async (action, { rejectWithValue, dispatch }) => {
+    console.log(action);
     const res = await axios.get(
-      "http://universities.hipolabs.com/search?country=Ukraine"
+      `http://universities.hipolabs.com/search?country=${action}`
     );
     dispatch(setUniversity(res.data));
   }
