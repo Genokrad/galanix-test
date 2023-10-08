@@ -17,13 +17,10 @@ const Item = ({ index, image, indexKeeper, deleteImg }) => {
 
     if (viewportWidth > 900) {
       setDivider(4);
-      console.log(viewportWidth);
     } else if (viewportWidth <= 900 && viewportWidth > 500) {
       setDivider(2);
-      console.log(viewportWidth);
     } else if (viewportWidth <= 500) {
       setDivider(1);
-      console.log(viewportWidth);
     }
   }, 400);
 

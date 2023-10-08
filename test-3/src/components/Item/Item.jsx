@@ -1,9 +1,12 @@
+import PropTypes from "prop-types";
+
 import { useEffect, useState } from "react";
 import {
   StyledCheckbox,
   StyledLi,
   StyledLink,
   StyledText,
+  CheckboxWrapper,
 } from "./Item.styled";
 
 import { AiOutlineCheck } from "react-icons/ai";
@@ -16,7 +19,6 @@ const Item = ({ item, index, addToFavotite, favorite }) => {
     let midleRes = [...favorite];
     const inArr = midleRes.find((item) => item === `${index}`);
     setIsFavorite(inArr);
-    console.log(favorite);
   }, [favorite]);
 
   // const favoriteChecker = (index) => {
@@ -34,13 +36,26 @@ const Item = ({ item, index, addToFavotite, favorite }) => {
 
       <StyledCheckbox>
         {!isFavorit ? (
-          <AiOutlineBorder onClick={() => addToFavotite(`${index}`)} />
+          <CheckboxWrapper>
+            <p>Save to favorite</p>
+            <AiOutlineBorder onClick={() => addToFavotite(`${index}`)} />
+          </CheckboxWrapper>
         ) : (
-          <AiOutlineCheck onClick={() => addToFavotite(`${index}`)} />
+          <CheckboxWrapper>
+            <p>Remove from favorite</p>
+            <AiOutlineCheck onClick={() => addToFavotite(`${index}`)} />
+          </CheckboxWrapper>
         )}
       </StyledCheckbox>
     </StyledLi>
   );
+};
+
+Item.propTypes = {
+  item: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired,
+  addToFavotite: PropTypes.func.isRequired,
+  favorite: PropTypes.array.isRequired,
 };
 
 export default Item;

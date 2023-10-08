@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
   StyledForm,
   StyledLabel,
@@ -18,6 +19,12 @@ const Form = ({ formSubmit, inputSetter, inputCity }) => {
       <StyledButton type="submit">Submit</StyledButton>
     </StyledForm>
   );
+};
+
+Form.propTypes = {
+  inputCity: PropTypes.string.isRequired,
+  formSubmit: PropTypes.func.isRequired,
+  inputSetter: PropTypes.func.isRequired,
 };
 
 export default Form;

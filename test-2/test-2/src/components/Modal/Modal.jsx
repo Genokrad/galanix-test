@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import { StyledBackdrop, StyledCloseIcon, StyledNodal } from "./Modal.styled";
 
 const Modal = ({ currentImg, closeModal }) => {
-  console.log(currentImg);
   return (
     <StyledBackdrop>
       <StyledNodal>

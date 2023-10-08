@@ -38,7 +38,7 @@ function App() {
     setImageArr((prevState) => {
       const arr = prevState.filter((_, index) => index !== indexToDel);
       localStorage.setItem("images", JSON.stringify(arr));
-      console.log(arr);
+
       return arr;
     });
   };

@@ -21,9 +21,10 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
-  padding: 8px;
-  width: 240px;
+  padding: 8px 32px;
+
   border: 2px solid black;
   border-radius: 32px;
   margin: 0 auto;
+  margin-bottom: 32px;
 `;

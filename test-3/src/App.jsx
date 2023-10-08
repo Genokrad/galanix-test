@@ -9,7 +9,7 @@ import {
 import { Container } from "./app.styled";
 
 import UniversityList from "./components/UniversityList";
-import Button from "./Button";
+import Button from "./components/Button";
 import Form from "./components/Form";
 
 function App() {
@@ -36,9 +36,7 @@ function App() {
   const resetData = () => {
     disatch(setUniversity([]));
     setInputCity("");
-    setTimeout(() => {
-      console.log(inputCity);
-    }, 0);
+    setFavorite([]);
   };
 
   const addToFavotite = (index) => {
@@ -48,13 +46,13 @@ function App() {
     if (!inArr) {
       midleRes.push(index);
       setFavorite(midleRes);
-      console.log(favorite);
+
       return;
     }
     if (inArr) {
       midleRes = midleRes.filter((item) => item !== index);
       setFavorite(midleRes);
-      console.log(favorite);
+
       return;
     }
   };
@@ -70,6 +68,7 @@ function App() {
         inputSetter={inputSetter}
         inputCity={inputCity}
       />
+      <p>University added to favorite {favorite.length} </p>
       <UniversityList
         universitys={universitys}
         addToFavotite={addToFavotite}
